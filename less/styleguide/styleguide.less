@@ -1,0 +1,126 @@
+body{
+    font-family: @FontMainLight;
+    margin: 5%;
+}
+
+h1{
+    color: @ColorPrimary;
+    font-size: 2.5em; /* 32px / 16px */
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0px 0px 20px 0px;
+}
+
+h2{
+    color: @ColorPrimary;
+    font-size: 2em; /* 32px / 16px */
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0px 0px 10px 0px;
+}
+
+h3{
+    color: @ColorPrimary;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0px 0px 5px 0px;
+}
+
+h4{
+    color: @ColorPrimary;
+    font-size: 1.2em; 
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0px 0px 5px 0px;
+}
+
+p{
+    font-family: @FontMainRegular;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    color: @ColorFonts;
+    margin: 10px 0px;
+    text-rendering: optimizelegibility;
+}
+
+hr {
+    background-color: @ColorHighlight;
+    color: @ColorHighlight;
+    width: 50%;
+    height: 4px;
+    margin: 30px auto;
+}
+
+a{
+   .transition(all linear 0.2s);
+   color: @ColorPrimary;
+   text-decoration: none;
+   outline: none;
+
+   &:hover{
+      color: @ColorHighlight;
+   }
+}
+
+time{
+    color: @ColorPrimary;
+}
+
+button{
+    background-color: @ColorPrimary;
+    color: @ColorFontsNegative;
+    border: 2px solid @ColorMainBackground;
+    width: 80px;
+    height: 80px;
+    .opacity(0.80);
+    .transition(opacity linear 0.2s);
+    .border-radius(100px);
+
+    &:hover{
+        cursor: pointer;
+        .opacity(1);
+    }
+
+    span{
+        display: inline-block;
+        font-size: 1.65em;
+        max-width: 100%;    
+    }
+
+    img{
+        max-width: 80%;
+        vertical-align: middle;
+    }
+}
+
+footer{
+    
+}
+
+.color-swatch{
+    border: 5px solid #fff;
+    width: 80px;
+    height: 80px;
+
+    &.primary-color{
+        background-color: @ColorPrimary;
+    }
+
+    &.secondary-color{
+        background-color: @ColorSecondary;
+    }
+
+    &.highlight-color{
+        background-color: @ColorHighlight;
+    }
+
+    &.footer-background-color{
+        background-color: @ColorMainFooterBackground;
+    }
+    
+
+    &.font-color{
+        background-color: @ColorFonts;
+    }
+}
