@@ -1,6 +1,6 @@
 body{
     font-family: @FontMainLight;
-    margin: 5%;
+    color: @ColorFonts;
 }
 
 h1{
@@ -39,7 +39,7 @@ p{
     font-family: @FontMainRegular;
     font-size: 1.1em;
     line-height: 1.3em;
-    color: @ColorFonts;
+    
     margin: 10px 0px;
     text-rendering: optimizelegibility;
 }
@@ -65,6 +65,9 @@ a{
 
 time{
     color: @ColorPrimary;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 800;
 }
 
 button{
@@ -94,8 +97,165 @@ button{
     }
 }
 
+h1#logo{
+    display:inline-block;
+    width: 90px;
+    height: 90px;
+
+    vertical-align: middle;
+
+    img{
+        .transition(opacity linear 0.2s);
+        max-width: 100%;
+        display: inline-block;
+        .opacity(0.8);
+
+        &:hover{
+            .opacity(1);
+        }
+    }
+
+    &.left{
+        display:none;
+    }
+}
+#main-header{
+    margin: 40px auto;
+    position: relative;
+
+    nav{
+        background-color: @ColorMainBackground;
+
+        ul{
+            width: 100%;
+            text-align: center;
+
+            li{
+                display: inline-block;
+                padding: 0 2%;
+
+                a{
+                    color: @ColorFonts;
+                    font-family: @FontMainLight;
+                    font-size: 1.5em; /* 24px / 16px */
+                    text-decoration: none;
+
+                    &:hover{
+                        color: @ColorPrimary;                    
+                    }
+
+                    &.selected{
+
+                        &:before{
+                            content: "(";
+                            position: relative;
+                            color: @ColorPrimary; 
+                            right: 2px;
+                            .transition(all linear 0.2s);
+                            font-size: 1.16em; /* 28px / 24px */
+                        }
+
+                        &:after{
+                            content: ")";
+                            position: relative;
+                            color: @ColorPrimary;
+                            left: 2px;
+                            .transition(all linear 0.2s);
+                            font-size: 1.16em; /* 28px / 24px */
+                        }
+
+                        &:hover{
+
+                            &:before{
+                                right: 5px;
+                                color: @ColorFonts;
+                            }
+
+                            &:after{
+                                left: 5px;
+                                color: @ColorFonts;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #menu-button{
+        display: none;    
+        position: absolute;
+        width: 30px;
+        right: 5%;
+        top: 0px;
+        cursor: pointer;
+
+        .menu-button-bar{
+            display: block;
+            background-color: @ColorPrimary; 
+            width:100%;
+            height:5px;
+            margin:3px 0px;
+            .border-radius(10px, 10px, 10px, 10px);
+        }
+    }
+}
+
+.main-section {
+    margin: 50px auto 70px;
+    max-width: 860px;
+    min-height: 400px;
+    padding: 20px 5%;
+}
+
 footer{
+    background-color: @ColorMainFooterBackground;
+    padding: 30px 0px;
+    min-height: 100px;
+    text-align: center;
     
+    p{
+        margin:10px 0px;
+        color:@ColorFontsNegative;
+        font-family: @FontMainLight;
+        font-size: 1em;
+
+        a{
+            &:hover{
+                color:@ColorHighlightNegative;      
+            }
+        }
+    }
+
+    button {
+        background-color: @ColorFontsNegative;
+        color: @ColorMainFooterBackground;
+        border: none;
+        width: 50px;
+        height: 50px;
+
+        .fa{
+            font-size: 4em;
+        }
+    }
+
+    .details-container{
+
+        p{
+            .transition(all linear 0.5s);
+            visibility: hidden;
+            .opacity(0);
+        }
+
+        &:hover {
+
+            p{
+                .transition(all linear 0.5s);
+                visibility: visible;
+                .opacity(1);
+            }  
+        }
+    }
 }
 
 .color-swatch{
@@ -123,4 +283,125 @@ footer{
     &.font-color{
         background-color: @ColorFonts;
     }
+}
+
+table {
+    font-size: 1.1em;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead {
+        background-color: @ColorMainFooterBackground;
+        color: @ColorFontsNegative;
+    }
+
+    th, td {
+        padding: 5px 3%;
+        border: none;
+    }
+
+    td {
+        padding: 5px 3%;
+        border-bottom: 1px solid @ColorMainFooterBackground;
+    }
+}
+
+
+
+//Widescreen, laptops
+@media screen and ( min-width: 1200px ){
+    
+}
+
+//Tablets, held in landscape mode
+@media screen and ( max-width: 1024px ){
+
+    .wrap{
+        width: 90%;
+    }
+}
+
+//Tablets, held in portrait mode
+@media screen and ( max-width: 768px ){
+    body {
+        font-size: 112%; /* Base font-size of 18px */
+    }
+    
+    #main-header {
+        width: 100%;
+        margin: 20px auto;
+
+        #logo.left {
+            width: 40px;
+            height: 40px;
+            display:inline-block;
+            margin-left: 2%;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            width: 100%;
+
+            &.open {
+                display: block;
+                z-index: 10;
+            }
+
+            ul {
+                width: 100%;
+                border-top: 1px solid @ColorFonts;
+
+                li {
+                    display: inline-block;
+                    border-bottom: 1px solid @ColorFonts;
+                    width: 100%;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    text-align: left;
+
+                    &.logo-container {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        #menu-button {
+            display: block;    
+        }
+    }  
+
+    .main-section {
+        margin: 20px auto 40px;
+
+        h1{
+            text-align: center;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+        }
+    }
+}
+
+//Small tablets, held in portrait mode
+@media screen and ( max-width: 600px ){
+    
+}
+
+//Small devices, held in landscape mode
+@media screen and ( max-width: 480px ){
+    
+}
+
+//Small devices, held in portrait mode
+@media screen and ( max-width: 320px ){
+
 }

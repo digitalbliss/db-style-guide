@@ -16,14 +16,32 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styleguide.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="less/styleguide.css" type="text/css" charset="utf-8"/>
 
     <title>The Digital Bliss LTD Style Guide</title>
 </head>
 
 <body id="page-id">
-    <header></header>
-    <section>
+    <header class="wrap" id="main-header">
+        <h1 class="left" id="logo"><img alt="Digital Bliss" src="images/db-cut.png"></h1>
+        <nav>
+            <ul>
+                <li><a href="/index.php/">home</a></li>
+                <li><a class="selected" href="/index.php/about">about</a></li>
+                <li><a href="/index.php/work">work</a></li>
+                <li class="logo-container"><h1 class="center" id="logo"><img alt="Digital Bliss" src="images/db-cut.png"></h1></li>
+                <li><a href="/index.php/write">write</a></li>
+                <li><a href="/index.php/play">play</a></li>
+                <li><a href="/index.php/connect">connect</a></li>
+            </ul>
+        </nav>
+        <div id="menu-button">
+            <div class="menu-button-bar"></div>
+            <div class="menu-button-bar"></div>
+            <div class="menu-button-bar"></div>
+        </div>
+    </header>
+    <section class="main-section">
         <h1>Styleguide Header 1 Example</h1>
         <p>Example of the h1 header</p>
         <h2>Headers</h2>
@@ -47,7 +65,7 @@
         <div class="color-swatch font-color"></div>
 
         <h2>Paragraphs and elements</h2>
-        <p>I decided to create a Style Guide after reading Anna Debenham’s <a>“Front End Style Guides”</a> even though I was more than half way through the process of creating the Digital Bliss website.</p>
+        <p>I decided to create a Style Guide after reading Anna Debenham’s <a href="">“Front End Style Guides”</a> even though I was more than half way through the process of creating the Digital Bliss website.</p>
         <hr>
         <p>I have many reasons for doing so but mostly I wanted to investigate in practice how a Style Guide could become part of my process and its effect on the effieciency of the process and of course the end result especially in the context of a responsive, content and mobile first approach.</p>
 
@@ -81,9 +99,63 @@
         </button>
         <p>This one an image</p>
         <button><img src="images/email-icon.png"></button>
+
+        <h2>Table</h2>
+        <table>
+        <thead>
+            <tr>
+                <th scope="col">This is the first Header</th>
+                <th scope="col">Header 2</th>
+                <th scope="col">Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Lorem Ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Lorem Ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Lorem Ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Lorem Ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Lorem Ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Lorem Ipsum</td>
+            </tr>
+        </tbody>
+    </table>
+
     </section>
     <footer>
-        <section></section>
+        <section class="wrap">
+            <p> &copy; 2014 Digital Bliss Ltd.</p>
+            <div class="details-container">
+                <button><i class="fa fa-info"></i></button>
+                <p>Design and Development by <a target="_blank" href="">Chris Asteriou</a></p>
+                <p>Logo Design by <a target="_blank" href="">Blend.gr</a></p>
+                <p>Our <a target="_blank" href="">Style Guide</a></p>
+                <p>Powered by <a target="_blank" href="">Expression Engine</a></p>
+                <p>Hosted on <a target="_blank" href="">Linode</a></p>
+            </div>
+        </section>
     </footer>
 </body>
 </html>
